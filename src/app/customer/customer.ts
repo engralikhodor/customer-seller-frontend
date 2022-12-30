@@ -4,11 +4,11 @@ export interface Customer {
     last_name: string,
     country: string,
     city: string,
-    currency: string,
-    pay_per_hour: number,
+    currency?: string,// use the '?' annotation to mark this property as optionnal
+    pay_per_hour?: number,// use the '?' annotation to mark this property as optionnal
     gender: string,
     email: string,
     phone: number,
-    date_of_birth: string,
+    date_of_birth?: string,// use the '?' annotation to mark this property as optionnal
     is_deleted: boolean
 }
