@@ -5,14 +5,19 @@ import { EditComponent } from './edit/edit.component';
 import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
-  { path: 'customer', redirectTo: 'customer/index', pathMatch: 'full'},
-  { path: 'customer/index', component: IndexComponent },
-  { path: 'customer/create', component: CreateComponent },
-  { path: 'customer/edit/:customerID', component: EditComponent } 
+
+  { path: 'seller', redirectTo: 'seller/index', pathMatch: 'full' },
+
+  { path: 'seller/index', component: IndexComponent },
+
+  { path: 'seller/create', component: CreateComponent },
+
+  { path: 'seller/edit/:sellerID', component: EditComponent }
+
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CustomerRoutingModule { }
+export class SellerRoutingModule { }
