@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Community } from '../community.model';
+import { CommunityService } from '../community.service';
 
 @Component({
   selector: 'app-index',
@@ -6,10 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-
-  constructor() { }
-
+  public list_communities: Community[] = [];
+  constructor(public communityService: CommunityService) { }
+  /*------------------------------------------*/
   ngOnInit(): void {
+    this.get_list_communities();
   }
-
+  /*------------------------------------------*/
+  get_list_communities() {
+    this.communityService.getAll().subscribe(
+      (data: Community[]) => {
+        this.list_communities = data;
+        console.log(this.list_communities);
+      }
+    );
+  }
+  /*------------------------------------------*/
+  deleteCommunity(id: number) {
+    this.communityService.delete(id).subscribe(
+      res => {
+        this.list_communities = this.list_communities.filter(item => item.getID() !== id);//TODO CHECK => here we can't do item.id
+        console.log("Task " + id + " has been removed!");
+      }
+    );
+  }
+  /*------------------------------------------*/
 }
