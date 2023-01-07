@@ -35,8 +35,8 @@
             <td>{{element.created_at_str}}</td>
 
             <td>
-                <a href="#" routerLink="/task/edit/{element.id}" class="btn btn-warning col-5">Edit</a>
-                <button type="button" class="ml-2 btn btn-danger col-5" (click)="delete_task(element.id)">Delete</button>
+                <img src="../../../assets/svg/edit-svgrepo-com.svg" width="32" height="32" routerLink="/task/edit/{{element.id}}" style="cursor: pointer;">
+                <img src="../../../assets/svg/delete-svgrepo-com.svg" width="32" height="32" (click)="delete_task(element.id)" style="cursor: pointer; margin-left: 2%;">
             </td>
         </tr>
     </table>

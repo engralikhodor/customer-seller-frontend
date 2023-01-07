@@ -16,8 +16,9 @@
             <td>{{element.name}}</td>
             <td>{{element.description || "-"}}</td>
             <td>
-                <a href="#" class="btn btn-warning col-5" routerLink="/community/edit/{{element.id}}">Edit</a>
-                <button type="button" class="ml-2 btn btn-danger col-5" (click)="delete_community(element.id)">Delete</button>
+                <!-- <a href="#" class="btn btn-warning col-6" routerLink="/community/edit/{{element.id}}">Edit</a> -->
+                <img src="../../../assets/svg/edit-svgrepo-com.svg" width="32" height="32" routerLink="/community/edit/{{element.id}}" style="cursor: pointer;">
+                <img src="../../../assets/svg/delete-svgrepo-com.svg" width="32" height="32" (click)="delete_community(element.id)" style="cursor: pointer; margin-left: 2%;">
             </td>
         </tr>
     </table>

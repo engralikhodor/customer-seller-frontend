@@ -1,7 +1,13 @@
- a {
-     color: black;
- }
- 
- .active {
-     font-weight: bold;
- }
+.container .nav-item a {
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.container .nav-item a img {
+    margin-right: 2%;
+}
+
+.container .nav-item .active {
+    font-weight: bold;
+}
