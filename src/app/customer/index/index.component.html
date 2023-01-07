@@ -22,9 +22,9 @@
             <td>{{element?.gender}}</td>
             <td>{{element?.created_at_str}}</td>
             <td>
-                <a href="#" routerLink="/customer/edit/{{element.id}}" class="btn btn-primary">Edit</a>
+                <a href="#" routerLink="/customer/edit/{{element.id}}" class="btn btn-primary col-5">Edit</a>
                 <!-- <a href="#" routerLink="['/customer/','edit',element.id]" class="btn btn-primary">Edit</a> -->
-                <button type="button" class="btn btn-danger" (click)="delete_customer(element.id)">Delete</button>
+                <button type="button" class="ml-2 btn btn-danger col-5" (click)="delete_customer(element.id)">Delete</button>
             </td>
         </tr>
     </table>
