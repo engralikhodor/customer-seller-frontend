@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "CenturyGothic";
+    src: local("CenturyGothic"), url(./assets/fonts/CenturyGothic.ttf) format("truetype");
+}
+
+* {
+    font-family: "CenturyGothic", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
