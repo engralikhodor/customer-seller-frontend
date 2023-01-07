@@ -12,7 +12,7 @@ import { CommunityService } from '../community.service';
 export class CreateComponent implements OnInit {
 
   public form: FormGroup = new FormGroup({});
-  private newCommunity = new Community(0, '', false, '');//empty instance
+  // private newCommunity = new Community(0, '', false, '');//empty instance
 
   constructor(
     public communityService: CommunityService,

@@ -1,1 +1,84 @@
-<p>create works!</p>
+<div>
+    <div class="d-flex justify-content-between">
+        <h4>New Task</h4>
+        <a href="#" routerLink="/task/index" class="btn btn-primary">Back</a>
+    </div>
+    <hr>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group row">
+            <label>From</label>
+            <input type="date" class="form-control" formControlName="date_time_from" id="date_time_from">
+            <div class="alert alert-danger mt-2" *ngIf="f.date_time_from.touched && f.date_time_from.invalid">
+                <div *ngIf="f.date_time_from.errors?.required">Required.</div>
+                <div *ngIf="f.date_time_from.errors?.pattern">Please check this value.</div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label>To</label>
+            <input type="date" class="form-control" formControlName="date_time_to" id="date_time_to">
+            <div class="alert alert-danger mt-2" *ngIf="f.date_time_to.touched && f.date_time_to.invalid">
+                <div *ngIf="f.date_time_to.errors?.required">Required.</div>
+                <div *ngIf="f.date_time_to.errors?.pattern">Please check this value.</div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label>City</label>
+            <input type="text" class="form-control" formControlName="city" id="city">
+            <div class="alert alert-danger mt-2" *ngIf="f.city.touched && f.city.invalid">
+                <div *ngIf="f.city.errors?.required">Required.</div>
+                <div *ngIf="f.city.errors?.pattern">Please check this value.</div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label>Location Lat</label>
+            <input type="text" class="form-control" formControlName="location_lat" id="location_lat">
+            <div class="alert alert-danger mt-2" *ngIf="f.location_lat.touched && f.location_lat.invalid">
+                <div *ngIf="f.location_lat.errors?.required">Required.</div>
+                <div *ngIf="f.location_lat.errors?.pattern">Please check this value.</div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label>Location Lng</label>
+            <input type="text" class="form-control" formControlName="location_lng" id="location_lng">
+            <div class="alert alert-danger mt-2" *ngIf="f.location_lng.touched && f.location_lng.invalid">
+                <div *ngIf="f.location_lng.errors?.required">Required.</div>
+                <div *ngIf="f.location_lng.errors?.pattern">Please check this value.</div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label>Task Type</label>
+            <input type="text" class="form-control" formControlName="task_type" id="task_type">
+            <div class="alert alert-danger mt-2" *ngIf="f.task_type.touched && f.task_type.invalid">
+                <div *ngIf="f.task_type.errors?.required">Required.</div>
+                <div *ngIf="f.task_type.errors?.pattern">Please check this value.</div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label>Created By (you)</label>
+            <input type="text" class="form-control" formControlName="created_by_id" id="created_by_id">
+            <div class="alert alert-danger mt-2" *ngIf="f.created_by_id.touched && f.created_by_id.invalid">
+                <div *ngIf="f.created_by_id.errors?.required">Required.</div>
+                <div *ngIf="f.created_by_id.errors?.pattern">Please check this value.</div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label>Status</label>
+            <input type="text" class="form-control" formControlName="status" id="status">
+            <div class="alert alert-danger mt-2" *ngIf="f.status.touched && f.status.invalid">
+                <div *ngIf="f.status.errors?.required">Required.</div>
+                <div *ngIf="f.status.errors?.pattern">Please check this value.</div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+
+    </form>
+</div>

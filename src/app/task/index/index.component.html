@@ -1,1 +1,43 @@
-<p>index works!</p>
+<section>
+    <div class="d-flex justify-content-between">
+        <h4>Tasks</h4>
+        <a class="btn btn-light" routerLink="/task/create">Add New</a>
+    </div>
+    <br>
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>From</th>
+            <th>To</th>
+            <th>City</th>
+            <th>Location Lat</th>
+            <th>Location Lng</th>
+            <th>Total Cost</th>
+            <th>Task Type</th>
+            <th>Status</th>
+            <th>Assigned To</th>
+            <th>Created By</th>
+            <th>Created on</th>
+            <th width="200px">Action</th>
+        </tr>
+        <tr *ngFor="let element of list_tasks">
+            <td>{{element.id}}</td>
+            <td>{{element.date_time_from}}</td>
+            <td>{{element.date_time_to}}</td>
+            <td>{{element.city}}</td>
+            <td>{{element.location_lat}}</td>
+            <td>{{element.location_lng}}</td>
+            <td>{{element.total_cost || "-"}}</td>
+            <td>{{element.task_type}}</td>
+            <td>{{element.status}}</td>
+            <td>{{element.assigned_to_id}}</td>
+            <td>{{element.created_by_id}}</td>
+            <td>{{element.created_at_str}}</td>
+
+            <td>
+                <a href="#" routerLink="/task/edit/{element.id}" class="btn btn-primary col-5">Edit</a>
+                <button type="button" class="ml-2 btn btn-danger col-5" (click)="delete_task(element.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</section>
