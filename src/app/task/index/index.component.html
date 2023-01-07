@@ -1,7 +1,7 @@
 <section>
     <div class="d-flex justify-content-between">
-        <h4>Tasks</h4>
-        <a class="btn btn-light" routerLink="/task/create">Add New</a>
+        <!-- <h4>Tasks</h4> -->
+        <a class="btn btn-info" routerLink="/task/create">Add New</a>
     </div>
     <br>
     <table class="table">
@@ -35,7 +35,7 @@
             <td>{{element.created_at_str}}</td>
 
             <td>
-                <a href="#" routerLink="/task/edit/{element.id}" class="btn btn-primary col-5">Edit</a>
+                <a href="#" routerLink="/task/edit/{element.id}" class="btn btn-warning col-5">Edit</a>
                 <button type="button" class="ml-2 btn btn-danger col-5" (click)="delete_task(element.id)">Delete</button>
             </td>
         </tr>

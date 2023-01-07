@@ -1,7 +1,7 @@
 <section>
     <div class="d-flex justify-content-between">
-        <h4>Customers</h4>
-        <a class="btn btn-light" routerLink="/customer/create">Add New</a>
+        <!-- <h4>Customers</h4> -->
+        <a class="btn btn-info" routerLink="/customer/create">Add New</a>
     </div>
     <br>
     <table class="table">
@@ -22,7 +22,7 @@
             <td>{{element?.gender}}</td>
             <td>{{element?.created_at_str}}</td>
             <td>
-                <a href="#" routerLink="/customer/edit/{{element.id}}" class="btn btn-primary col-5">Edit</a>
+                <a href="#" routerLink="/customer/edit/{{element.id}}" class="btn btn-warning col-5">Edit</a>
                 <!-- <a href="#" routerLink="['/customer/','edit',element.id]" class="btn btn-primary">Edit</a> -->
                 <button type="button" class="ml-2 btn btn-danger col-5" (click)="delete_customer(element.id)">Delete</button>
             </td>

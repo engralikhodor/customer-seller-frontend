@@ -1,13 +1,20 @@
 <div class="container" style="padding:20px;">
-    <div>
-        <a href="/customer/index"> CUSTOMERS </a>
-        <a href="/seller/index"> SELLERS </a>
-        <a href="/task/index"> TASKS </a>
-        <a href="/community/index"> COMMUNITIES </a>
-    </div>
+    <ul class="nav nav-tabs mb-3">
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/customer']" routerLinkActive="active" aria-current="page" href="/customer/index">CUSTOMERS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/seller']" routerLinkActive="active" href="/seller/index">SELLERS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/task']" routerLinkActive="active" href="/task/index">TASKS</a>
+        </li>
+        <li class="nav-item">
+            <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">COMMUNITIES</a> -->
+            <a class="nav-link" [routerLink]="['/community']" routerLinkActive="active" href="/community/index">COMMUNITIES</a>
+        </li>
+    </ul>
 
-
-    <hr>
     <main>
         <router-outlet></router-outlet>
     </main>
