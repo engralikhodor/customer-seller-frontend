@@ -1,1 +1,31 @@
-<p>index works!</p>
+<section>
+    <div class="d-flex justify-content-between">
+        <h4>Sellers</h4>
+        <a class="btn btn-light" routerLink="/seller/create">Add New</a>
+    </div>
+    <br>
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>City</th>
+            <th>Gender</th>
+            <th>Member since</th>
+            <th width="220px">Action</th>
+        </tr>
+        <tr *ngFor="let element of list_sellers">
+            <td>{{element?.id}}</td>
+            <td>{{element?.full_name}}</td>
+            <td>{{element?.country}}</td>
+            <td>{{element?.city}}</td>
+            <td>{{element?.gender}}</td>
+            <td>{{element?.created_at_str}}</td>
+            <td>
+                <a href="#" routerLink="/seller/edit/{{element.id}}" class="btn btn-primary">Edit</a>
+                <!-- <a href="#" routerLink="['/seller/','edit',element.id]" class="btn btn-primary">Edit</a> -->
+                <button type="button" class="btn btn-danger" (click)="delete_seller(element.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</section>
