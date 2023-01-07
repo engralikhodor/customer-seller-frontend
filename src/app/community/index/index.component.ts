@@ -7,6 +7,7 @@ import { CommunityService } from '../community.service';
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
+
 export class IndexComponent implements OnInit {
   public list_communities: Community[] = [];
   constructor(public communityService: CommunityService) { }
@@ -24,7 +25,7 @@ export class IndexComponent implements OnInit {
     );
   }
   /*------------------------------------------*/
-  deleteCommunity(id: number) {
+  delete_community(id: number) {
     this.communityService.delete(id).subscribe(
       res => {
         this.list_communities = this.list_communities.filter(item => item.id !== id);

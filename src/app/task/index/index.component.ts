@@ -24,7 +24,7 @@ export class IndexComponent implements OnInit {
     )
   }
   /*------------------------------------------*/
-  deleteTask(id: number) {
+  delete_task(id: number) {
     this.taskService.delete(id).subscribe(
       res => {
         this.list_tasks = this.list_tasks.filter(item => item.id !== id);

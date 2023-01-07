@@ -18,7 +18,7 @@
             <td *ngIf="element.description === null">-</td>
             <td>
                 <a href="#" class="btn btn-primary col-5" routerLink="/community/edit/{{element.id}}">Edit</a>
-                <button type="button" class="ml-2 btn btn-danger col-5" (click)="deleteCommunity(element.id)">Delete</button>
+                <button type="button" class="ml-2 btn btn-danger col-5" (click)="delete_community(element.id)">Delete</button>
             </td>
         </tr>
     </table>
