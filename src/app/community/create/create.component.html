@@ -1,1 +1,30 @@
-<p>create works!</p>
+<div>
+    <div class="d-flex justify-content-between">
+        <h4>New Community</h4>
+        <a href="#" routerLink="/community/index" class="btn btn-primary">Back</a>
+    </div>
+    <hr>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+                <label for="name">Community Name</label>
+                <input type="text" formControlName="name" id="name" class="form-control">
+                <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger mt-2">
+                    <div *ngIf="f.name.errors?.required">*Community name is required.</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-md-6">
+                <label for="description">Description</label>
+                <input type="text" formControlName="description" id="description" class="form-control">
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+
+</div>

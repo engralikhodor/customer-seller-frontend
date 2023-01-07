@@ -1,1 +1,25 @@
-<p>index works!</p>
+<section>
+    <div class="d-flex justify-content-between">
+        <h4>Communities</h4>
+        <a class="btn btn-light" routerLink="/community/create">Add New</a>
+    </div>
+    <br>
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>Community Name</th>
+            <th>Description</th>
+            <th width="220px">Action</th>
+        </tr>
+        <tr *ngFor="let element of list_communities">
+            <td>{{element.id}}</td>
+            <td>{{element.name}}</td>
+            <td *ngIf="element.description !== null">{{element.description}}</td>
+            <td *ngIf="element.description === null">-</td>
+            <td>
+                <a href="#" class="btn btn-primary col-5" routerLink="/community/edit/{{element.id}}">Edit</a>
+                <button type="button" class="ml-2 btn btn-danger col-5" (click)="deleteCommunity(element.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</section>

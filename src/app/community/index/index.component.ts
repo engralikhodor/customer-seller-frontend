@@ -27,8 +27,8 @@ export class IndexComponent implements OnInit {
   deleteCommunity(id: number) {
     this.communityService.delete(id).subscribe(
       res => {
-        this.list_communities = this.list_communities.filter(item => item.getID() !== id);//TODO CHECK => here we can't do item.id
-        console.log("Task " + id + " has been removed!");
+        this.list_communities = this.list_communities.filter(item => item.id !== id);
+        console.log("Community " + id + " has been removed!");
       }
     );
   }
