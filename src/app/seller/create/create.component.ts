@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SellerService } from '../seller.service';
+import { AlertService } from 'ngx-alerts';
 
 @Component({
   selector: 'app-create',
@@ -11,7 +12,10 @@ import { SellerService } from '../seller.service';
 export class CreateComponent implements OnInit {
   public form: FormGroup = new FormGroup({});
   /*------------------------------------------*/
-  constructor(public sellerService: SellerService, private router: Router) { }
+  constructor(
+    public sellerService: SellerService,
+    private router: Router,
+    private alertService: AlertService) { }
   /*------------------------------------------*/
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -31,10 +35,46 @@ export class CreateComponent implements OnInit {
     this.sellerService.create(this.form.value).subscribe(
       res => {
         console.log(res);
+        this.alertService.success("Added!");
         this.router.navigateByUrl("seller/index");
       }
     );
   }
   /*------------------------------------------*/
+  /*
+   (response) => {
+        try {
+          if (response == null) {
+            this.alertService.danger(
+              "Sorry, Something went wrong! Please try again."
+            );
+          }
+          else {
+            if (response["statusCode"] === SUCCESS_OK) {
+              this.alertService.success("Cancelled Successfully");
+              this.save_RES(updatedBooking);
+            }
+            else {
+              if (
+                response["message"] != null && response["message"] !== ''
+              ) {
+                this.alertService.warning(response["message"]);
+              }
+              else {
+                this.alertService.danger(
+                  "Sorry, Something went wrong! Please try again."
+                );
+              }
+            }
+          }
+        } catch (error) {
+          console.error(error);
+          this.alertService.danger("Unknown Error.");
+        }
+      },
+      (error) => {
+        this.alertService.danger("Unknown Error.");
+      }
+       */
 
 }
